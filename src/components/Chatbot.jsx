@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import './Chatbot.css'; // Optional for styling
+import Button from '../common/components/Button';
 
 const Chatbot = () => {
     const [messages, setMessages] = useState([]);
@@ -46,7 +47,7 @@ const Chatbot = () => {
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                 />
-                <button onClick={handleSend}>Send</button>
+                <Button onClick={handleSend}>Send</Button>
             </div>
         </div>
     );

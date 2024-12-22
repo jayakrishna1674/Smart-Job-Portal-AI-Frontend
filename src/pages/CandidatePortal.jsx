@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Chatbot from "../components/Chatbot";
+import { Link } from "react-router-dom";
 
 const CandidatePortal = () => {
   const [jobs, setJobs] = useState([]);
@@ -26,7 +27,10 @@ const CandidatePortal = () => {
       <input
         placeholder={"Search by location"}
         value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={(e) => {
+          setTimeout(() => {}, 5000);
+          setQuery(e.target.value);
+        }}
       />
       <ul>
         {jobs.map((job) => (
@@ -35,6 +39,9 @@ const CandidatePortal = () => {
           </li>
         ))}
       </ul>
+      <Link to={"/"}>
+        <span>Go to Home !!</span>
+        </Link>
       <Chatbot />
     </div>
   );
